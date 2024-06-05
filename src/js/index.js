@@ -1,21 +1,34 @@
 // El styles lo importamos aquí para que se encargue Vite de compilar todo
-import '../scss/styles.scss';
+import "../scss/styles.scss";
 
 //si aparece letra que lo borre si aparece numero que lo muestre
-const campoEntrada = document.getElementById('entrada');
-const campoSalida = document.getElementById('salida');
+const campoEntrada = document.getElementById("entrada");
+const campoSalida = document.getElementById("salida");
 
 function callbackEvent() {
   const condicion = isNaN(campoEntrada.value);
   console.log(campoEntrada.value);
   if (condicion) {
-    campoEntrada.value = '';
+    campoEntrada.value = "";
   }
 }
 
-campoEntrada.addEventListener('keyup', callbackEvent);
+campoEntrada.addEventListener("keyup", callbackEvent);
 
 //Elabore un programa con javascript que en el navegador permita a través de un input en el que se introduce un número y del click de un botón actualizar un contador en pantalla que reduzca en 1 unidad con cada click el número introducido.
+
+const button = document.getElementById("countdownButton");
+const number = document.getElementById("countdown");
+
+//por que function y no const?
+
+function countdownEvent() {
+  for (let i = number.length(); i <= 0; i--) {
+    console.log(i);
+  }
+}
+
+button.addEventListener("click", countdownEvent);
 
 //Elabore un programa con javascript que en el navegador permita a través de un input en el que se introducen una lista de números separados por coma y del click de un botón sumar toda la lista de números introducidos.
 
